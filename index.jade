@@ -1,0 +1,189 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='style/main.css')
+  body.overflow-x-hidden
+    .global-container.flex.flex-column.relative
+      .header-section.flex.items-center
+        .logo
+          img(src="images/logo.svg", alt="Codepen")
+        
+        .pen-main-info.ml3
+          .pen-title Menu
+          .pen-author a pen by hayk
+        
+        .flex-auto
+
+        .language-switches.flex
+          .language-switch.active html
+          .language-switch.active css
+          .language-switch.active js
+          .language-switch console
+        .mr2
+
+        .language-switches.flex
+          .language-switch.layout-mode.flex.items-center
+            img(src="images/layout-1.svg")
+          .language-switch.layout-mode.flex.items-center.active
+            img(src="images/layout-2.svg")
+          .language-switch.layout-mode.flex.items-center
+            img(src="images/layout-3.svg")
+
+        .mr3
+        
+        .opt-button.button-unsaved.mr1
+          img(src="images/cloud.svg").opt-button-icon
+          | Save
+        .opt-button.mr1
+          img(src="images/fork.svg").opt-button-icon
+          | Fork
+        .opt-button.mr2.js-toggle-settings
+          img(src="images/gear.svg").opt-button-icon
+          | Settings
+
+        .author-avatar
+
+      
+      .main-section.flex-auto.flex.flex-column
+        .code-section.flex-auto.flex
+          .language-split
+            .language-header.on-hover-opaque-input.flex.items-center.mx2
+              .language-title HTML
+
+              .flex-auto
+              
+              a(href="").code-button.mr1.on-hover-opaque-output Tidy
+              img(src="images/gear.svg").mr2.on-hover-opaque-output
+              img(src="images/cross.svg").on-hover-opaque-output
+          .language-split
+            .language-header.on-hover-opaque-input.flex.items-center.mx2
+              .language-title CSS
+                span.language-type (SCSS)
+              .flex-auto
+              
+              a(href="").code-button.mr1.on-hover-opaque-output View Compiled
+              img(src="images/gear.svg").mr2.on-hover-opaque-output
+              img(src="images/cross.svg").on-hover-opaque-output
+
+          .language-split
+            .language-header.on-hover-opaque-input.flex.items-center.mx2
+              .language-title JS
+
+              .flex-auto
+              
+              a(href="").code-button.mr1.on-hover-opaque-output Tidy
+              img(src="images/gear.svg").mr2.on-hover-opaque-output
+              img(src="images/cross.svg").on-hover-opaque-output
+
+        .view-section.flex-auto
+
+    .panel
+      .panel-bg
+      .panel-container.bg-grey2
+        .pen-settings-header.px3.pt1
+          h3.pen-settings-title Pen Settings
+
+          .tabs
+            .tab HTML
+            .tab.active CSS
+            .tab JS
+            .tab Behavior
+        
+        .px3.py1
+          form
+            .setting-section-title CSS Preprocessor
+            .choose-options
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="css" checked)
+                  .choose-option-title None
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="css")
+                  .choose-option-title LESS
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="css")
+                  .choose-option-title SCSS
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="css")
+                  .choose-option-title SASS
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="css")
+                  .choose-option-title Stylus
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="css")
+                  .choose-option-title PostCSS
+
+            .setting-section-title CSS Base
+            .choose-options
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="base" checked)
+                  .choose-option-title None
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="base")
+                  .choose-option-title Normalize
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="base")
+                  .choose-option-title Reset              
+
+            .setting-section-title Vendor Prefixing
+            .choose-options
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="prefix" checked)
+                  .choose-option-title None
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="prefix")
+                  .choose-option-title Autoprefixer
+
+              .choose-option
+                label.choose-option-label
+                  input.choose-option-input(type="radio" name="prefix")
+                  .choose-option-title Prefixfree          
+
+            .setting-section-title Add External CSS
+            p.mt1 These stylesheets will be added in this order and before the code you write in the CSS editor. You can also add another Pen here, and it will pull the CSS from it. Try typing "font" or "ribbon" below.
+            
+            .flex.flex-column
+              input(type="text" placeholder="http://codepen.io/username/pen/aBcDef").p1.settings-input
+              .mb1
+              input(type="text" placeholder="http://codepen.io/username/pen/aBcDef").p1.settings-input
+
+
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script.
+      $( ".language-switch" ).click(function() {
+        $( this ).toggleClass("active");
+      });
+      $( ".layout-mode" ).click(function() {
+        $( ".layout-mode" ).removeClass("active");
+        $( this ).addClass("active");
+      });
+
+      $( ".js-toggle-settings" ).click(function() {
+        $( ".panel" ).addClass("active");
+      });
+      $( ".panel-bg" ).click(function() {
+        $( ".panel" ).removeClass("active");
+      });
